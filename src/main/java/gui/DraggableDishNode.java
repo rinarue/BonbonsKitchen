@@ -1,6 +1,6 @@
-package main.java.gui;
+package gui;
 
-import main.java.core.Dish;
+import core.Dish;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
@@ -13,9 +13,9 @@ public class DraggableDishNode extends StackPane {
 
     public DraggableDishNode(Dish dish) {
         this.dish = dish;
-        ImageView imageView = new ImageView(new Image("file:main.resources.assets/dishes/" + dish.getName() + ".png"));
-        imageView.setFitWidth(64);
-        imageView.setFitHeight(64);
+        ImageView imageView = new ImageView(new Image(dish.getImagePath()));
+        imageView.setFitWidth(80);
+        imageView.setFitHeight(80);
         getChildren().add(imageView);
 
         setOnDragDetected(e -> {

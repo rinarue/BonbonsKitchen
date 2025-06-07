@@ -1,4 +1,4 @@
-package main.java.gui;
+package gui;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -8,7 +8,7 @@ import javafx.scene.layout.*;
 
 public class MainMenuView extends StackPane {
     private final Button startButton;
-    private final Button exitButton;
+    private final Button tutorialButton;
     private final ImageView backgroundImageView;
 
     public MainMenuView() {
@@ -23,13 +23,16 @@ public class MainMenuView extends StackPane {
         VBox menuBox = new VBox(20);
         menuBox.setAlignment(Pos.CENTER);
 
-        startButton = new Button("Start Game");
+        startButton = new Button("Start");
         startButton.getStyleClass().add("button-menu");
 
-        exitButton = new Button("Exit");
-        exitButton.getStyleClass().add("button-menu");
+        tutorialButton = new Button("Tutorial");
+        tutorialButton.getStyleClass().add("button-menu");
 
-        menuBox.getChildren().addAll(startButton, exitButton);
+        // ADD THIS:
+        menuBox.getChildren().addAll(startButton, tutorialButton);
+        menuBox.setTranslateX(-270);
+        menuBox.setTranslateY(170);
         getChildren().add(menuBox);
     }
 
@@ -37,7 +40,7 @@ public class MainMenuView extends StackPane {
         return startButton;
     }
 
-    public Button getExitButton() {
-        return exitButton;
+    public Button getTutorialButton() {
+        return tutorialButton;
     }
 }

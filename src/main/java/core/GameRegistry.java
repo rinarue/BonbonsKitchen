@@ -1,5 +1,9 @@
-package main.java.core;
+package core;
 
+import core.Dish;
+import core.Ingredient;
+
+import java.util.Arrays;
 import java.util.List;
 
 public class GameRegistry {
@@ -9,7 +13,7 @@ public class GameRegistry {
         allIngredients = ingredients;
     }
 
-    public static main.java.core.Ingredient getIngredientByName(String name) {
+    public static Ingredient getIngredientByName(String name) {
         return allIngredients.stream()
                 .filter(i -> i.getName().equalsIgnoreCase(name))
                 .findFirst()
@@ -22,10 +26,18 @@ public class GameRegistry {
         allDishes = dishes;
     }
 
-    public static main.java.core.Dish getDishByName(String name) {
+    public static Dish getDishByName(String name) {
         return allDishes.stream()
                 .filter(d -> d.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
+    }
+
+    public static List<Ingredient> getAllIngredients() {
+        return allIngredients;
+    }
+
+    public static List<Dish> getAllDishes() {
+        return allDishes;
     }
 }

@@ -1,19 +1,19 @@
-package main.java.core;
+package core;
 
 public class Player {
-    private double money;
+    private int money;
 
-    public Player(double initialMoney) {
+    public Player(int initialMoney) {
         this.money = initialMoney;
     }
 
-    public double getMoney() { return money; }
+    public int getMoney() { return money; }
 
-    public void addMoney(double amount) {
+    public void addMoney(int amount) {
         money += amount;
     }
 
-    public boolean spendMoney(double amount) {
+    public boolean spendMoney(int amount) {
         if (money >= amount) {
             money -= amount;
             return true;

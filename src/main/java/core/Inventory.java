@@ -1,5 +1,6 @@
-package main.java.core;
+package core;
 
+import core.Ingredient;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,5 +21,9 @@ public class Inventory {
 
     public Map<Ingredient, Integer> getInventoryMap() {
         return new HashMap<>(ingredientCounts);
+    }
+
+    public int getQuantity(Ingredient ingredient) {
+        return ingredientCounts.getOrDefault(ingredient, 0);
     }
 }
