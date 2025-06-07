@@ -1,10 +1,20 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Nunito Bold';
+    src: url('/fonts/Nunito-Bold.ttf');
+}
+
 .button-menu {
-    -fx-font-family: 'Nunito';
-    -fx-font-size: 60px;
+    -fx-font-family: 'Nunito Bold';
+    -fx-font-size: 36px;
     -fx-background-color: #ffffff;
     -fx-text-fill: #805b4c;
     -fx-pref-width: 500px;
-    -fx-pref-height: 30px;
+    -fx-pref-height: 60px;
     -fx-background-radius: 100;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 2, 2);
@@ -13,66 +23,22 @@
 .button-menu:hover {
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
-    -fx-cursor: hand;
 }
 
 .button-menu:pressed {
     -fx-scale-x: 0.98;
     -fx-scale-y: 0.98;
-    -fx-cursor: hand;
 }
 
 .label-regular {
     -fx-font-family: 'Nunito';
-    -fx-font-size: 24px;
-    -fx-text-fill: #805b4c;
+    -fx-font-size: 18px;
+    -fx-text-fill: #4a4a4a;
 }
 
 .label-money {
-    -fx-font-family: 'Nunito';
+    -fx-font-family: 'Nunito Bold';
     -fx-font-size: 24px;
-    -fx-text-fill: #805b4c;
-}
-
-.button-nav {
-    -fx-background-color: transparent;
-    -fx-cursor: hand;
-}
-
-.button-nav:hover {
-    -fx-background-color: transparent;
-    -fx-scale-x: 1.01;
-    -fx-scale-y: 1.01;
-    -fx-cursor: hand;
-}
-
-.button-nav:pressed {
-    -fx-background-color: transparent;
-    -fx-scale-x: 0.98;
-    -fx-scale-y: 0.98;
-    -fx-cursor: hand;
-}
-
-.button-cook {
-    -fx-font-family: 'Nunito';
-    -fx-background-color: #fffbed;
-    -fx-text-fill: #805b4c;
-    -fx-border-color: #805b4c;
-    -fx-font-size: 16px;
-    -fx-padding: 6 12;
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-    -fx-cursor: hand;
-}
-
-.button-cook:hover {
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-    -fx-cursor: hand;
-}
-
-.button-cook:pressed {
-    -fx-scale-x: 0.98;
-    -fx-scale-y: 0.98;
-    -fx-cursor: hand;
+    -fx-text-fill: #2e7d32; /* Dark green for money */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0, 1, 1);
 }

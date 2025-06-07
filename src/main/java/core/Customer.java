@@ -1,6 +1,4 @@
-package core;
-
-import core.Ingredient;
+package main.java.core;
 
 public class Customer {
     private final String name;

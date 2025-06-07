@@ -1,6 +1,6 @@
-package gui;
+package main.java.gui;
 
-import core.Ingredient;
+import main.java.core.Ingredient;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
