@@ -28,6 +28,13 @@
     -fx-text-fill: #805b4c;
 }
 
+.label-small {
+    -fx-font-family: 'Nunito';
+    -fx-font-size: 18px;
+    -fx-text-fill: #805b4c;
+}
+
+
 .label-money {
     -fx-font-family: 'Nunito';
     -fx-font-size: 24px;
