@@ -1,5 +1,6 @@
 package gui;
 
+import core.GameEngine;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -19,35 +20,42 @@ public abstract class BaseView extends StackPane {
 
         // Money Display (top-left)
         logoIcon = new ImageView(new Image("assets/money_icon.png"));
-        logoIcon.setFitWidth(50);
-        logoIcon.setFitHeight(50);
+        logoIcon.setFitWidth(200);
+        logoIcon.setFitHeight(70);
 
-        moneyLabel = new Label("$0");
+        moneyLabel = new Label("$" + GameEngine.getPlayer().getMoney());
         moneyLabel.getStyleClass().add("label-money");
+        moneyLabel.setTranslateX(30);
 
-        HBox moneyBox = new HBox(8, logoIcon, moneyLabel);
-        moneyBox.setAlignment(Pos.CENTER_LEFT);
-        moneyBox.setPadding(new Insets(10));
-        moneyBox.setStyle("-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 12;");
-        StackPane.setAlignment(moneyBox, Pos.TOP_LEFT);
-        getChildren().add(moneyBox);
+        StackPane moneyStack = new StackPane(logoIcon, moneyLabel);
+        moneyStack.setPadding(new Insets(20));
+        moneyStack.setMaxSize(200, 70);
+        moneyStack.setPrefSize(200, 70);
+        moneyStack.setTranslateY(50);
+
+        StackPane.setAlignment(moneyLabel, Pos.CENTER);
+        StackPane.setAlignment(logoIcon, Pos.CENTER);
+
+        StackPane.setAlignment(moneyStack, Pos.TOP_LEFT);
+        getChildren().add(moneyStack);
 
         // Home Button (top-right)
         homeButton = new Button();
-        ImageView homeIcon = new ImageView(new Image("file:main.resources.assets/home.png"));
-        homeIcon.setFitWidth(35);
-        homeIcon.setFitHeight(35);
+        ImageView homeIcon = new ImageView(new Image("assets/home.png"));
+        homeIcon.setFitWidth(76);
+        homeIcon.setFitHeight(70);
         homeButton.setGraphic(homeIcon);
-        homeButton.setStyle("-fx-background-color: transparent;");
+        homeButton.setTranslateY(50);
+        homeButton.getStyleClass().add("button-nav");
         StackPane.setAlignment(homeButton, Pos.TOP_RIGHT);
-        StackPane.setMargin(homeButton, new Insets(10));
+        StackPane.setMargin(homeButton, new Insets(20));
         getChildren().add(homeButton);
 
         // Navigation Button (bottom-right)
         navButton = new Button();
-        navButton.setStyle("-fx-background-color: transparent;");
+        navButton.getStyleClass().add("button-nav");
         StackPane.setAlignment(navButton, Pos.BOTTOM_RIGHT);
-        StackPane.setMargin(navButton, new Insets(10));
+        StackPane.setMargin(navButton, new Insets(20));
         getChildren().add(navButton);
     }
 
